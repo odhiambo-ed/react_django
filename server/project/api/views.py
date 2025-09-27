@@ -4,4 +4,8 @@ from rest_framework import status
 from api.models import Book
 from api.serializer import BookSerializer 
 
-# Create your views here.
+@api_view(['GET'])
+def book_list(request):
+    books = Book.objects.all()
+    serializedData = BookSerializer(books, many=True).
+    return Response(serializedData)
