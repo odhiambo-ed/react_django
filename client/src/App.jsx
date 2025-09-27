@@ -32,6 +32,8 @@ function App() {
       })
       const data = await response.json()
       setBooks([...books, data])
+      setTitle('')
+      setPublishedYear('')
     } catch (error) {
       console.log(error)
     }
