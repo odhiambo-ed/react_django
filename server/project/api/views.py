@@ -5,7 +5,7 @@ from api.models import Book
 from api.serializer import BookSerializer 
 
 @api_view(['GET'])
-def book_list(request):
+def get_books(request):
     books = Book.objects.all()
     serializedData = BookSerializer(books, many=True).
     return Response(serializedData)
